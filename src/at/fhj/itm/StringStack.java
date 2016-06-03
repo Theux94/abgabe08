@@ -2,7 +2,14 @@ package at.fhj.itm;
 
 import at.fhj.itm.api.Stack;
 
-
+/**
+ * Stack Implementation of <code>Stack</code> Interface.
+ * supports String Values and can be initialized with a maximum number
+ * of items.
+ *  
+ * @see Stack
+ * @author Marco
+ */
 
 
 public class StringStack implements Stack
@@ -10,14 +17,20 @@ public class StringStack implements Stack
 	private String[] stack;
 	private int counter;
 
-
+/**
+ * Constructor.
+ * 
+ * @param stacklength	Defines length of the Stack
+ */
 	public StringStack(int stacklength) {
 		this.stack = new String[stacklength];
 		this.counter = 0;
 	}
 
 	
-	
+	/* (non-Javadoc)
+	 * @see at.fhj.itm.api.Stack#isEmpty()
+	 */	
 	@Override
 	public boolean isEmpty() {
 		if(counter == 0){
@@ -27,7 +40,9 @@ public class StringStack implements Stack
 		}
 	}
 
-	
+	/* (non-Javadoc)
+	 * @see at.fhj.itm.api.Stack#push(java.lang.String)
+	 */	
 	@Override
 	public void push(String item) {
 		if(counter < stack.length){
@@ -38,7 +53,9 @@ public class StringStack implements Stack
 		}
 	}
 
-	
+	/* (non-Javadoc)
+	 * @see at.fhj.itm.api.Stack#pop()
+	 */	
 	@Override
 	public String pop() {
 		if(isEmpty()){
